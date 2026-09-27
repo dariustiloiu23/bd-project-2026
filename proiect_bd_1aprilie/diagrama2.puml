@@ -1,0 +1,74 @@
+@startuml
+entity "JUDET" as J {
+  * id_judet : PK
+}
+entity "UNITATE_INVATAMANT" as UI {
+  * id_unitate : PK
+  --
+  id_judet : FK
+  id_unitate_parinte : FK (Recursive)
+}
+entity "CANDIDAT" as C {
+  * id_candidat : PK
+  --
+  id_unitate : FK
+}
+entity "EXAMEN" as E {
+  * id_examen : PK
+}
+entity "SESIUNE" as SES {
+  * id_sesiune : PK
+  --
+  id_examen : FK
+  id_disciplina : FK
+}
+entity "CENTRU_EXAMEN" as CE {
+  * id_centru : PK
+  --
+  id_judet : FK
+}
+entity "SALA" as S {
+  * id_sala : PK
+  --
+  id_centru : FK
+}
+entity "PROFESOR" as P {
+  * id_profesor : PK
+}
+entity "REPART_SUPRAV" as RS {
+  * id_repartizare : PK (Artificiala)
+  --
+  id_profesor : FK
+  id_sala : FK
+  id_sesiune : FK
+}
+entity "LUCRARE" as L {
+  * id_lucrare : PK
+  --
+  id_candidat : FK
+  id_sesiune : FK
+}
+entity "EVALUARE" as EVL {
+  * id_evaluare : PK
+  --
+  id_lucrare : FK
+  id_profesor : FK
+}
+entity "DISCIPLINA" as D {
+  * id_disciplina : PK
+}
+
+J ||--o{ UI
+UI ||--o{ C
+E ||--o{ SES
+D ||--o{ SES
+CE ||--o{ S
+J ||--o{ CE
+C ||--o{ L
+SES ||--o{ L
+P ||--o{ RS
+S ||--o{ RS
+SES ||--o{ RS
+L ||--o{ EVL
+P ||--o{ EVL
+@enduml

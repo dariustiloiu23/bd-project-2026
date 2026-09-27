@@ -1,0 +1,32 @@
+@startuml
+rectangle "JUDET" as J
+rectangle "UNITATE_INVATAMANT" as UI
+rectangle "CANDIDAT" as C
+rectangle "EXAMEN" as E
+rectangle "SESIUNE" as SES
+rectangle "DISCIPLINA" as D
+rectangle "CENTRU_EXAMEN" as CE
+rectangle "SALA" as S
+rectangle "LUCRARE" as L
+rectangle "PROFESOR" as P
+rectangle "EVALUARE" as EVL
+rectangle "REPART_SUPRAV" as RS
+
+J "1(1)" --- "m(1)" UI
+UI "1(1)" --- "m(1)" C
+UI "1(0)" --- "m(1)" UI : subordine
+E "1(1)" --- "m(1)" SES
+SES "m(1)" --- "1(1)" D
+C "1(1)" --- "m(1)" L
+SES "1(1)" --- "m(1)" L
+CE "1(1)" --- "m(1)" S
+J "1(1)" --- "m(1)" CE
+
+' Relatie Ternara
+P "m(1)" -- RS
+S "m(1)" -- RS
+SES "m(1)" -- RS
+
+P "1(0)" --- "m(1)" EVL
+L "1(1)" --- "m(1)" EVL
+@enduml
