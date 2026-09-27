@@ -1,6 +1,6 @@
 # County-Level Examination Management System
 
-An Oracle SQL database project for managing national exams (like the Baccalaureate or National Evaluation) at the county level.
+An Oracle SQL database project for managing national exams (like the Bacalaureat or National Evaluation) at the county level.
 The system handles everything from schools, examination centers, and candidates to supervisors, exam rooms, anonymized papers, and teacher evaluations.
 
 ## What the System Does
