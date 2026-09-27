@@ -21,6 +21,6 @@ Top-N Analysis: Getting the top 3 highest scores across the county.
 Views & Subquery DML: Creating a join view (V_CANDIDATI_SCOLI) and testing valid/invalid DML, plus updates and deletions using subqueries.
 
 ###Bonus Topics (in Docs)
-The documentation (144tiloiu_darius_lucian_bd1.docx) also includes:
+The documentation (144tiloiu_darius_lucian_bd1.pdf) also includes:
 Advanced normalization examples (BCNF, 4NF, 5NF) and a case for denormalization.
 A comparison with NoSQL (MongoDB), including a JSON document design and basic CRUD commands.
